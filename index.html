@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vinícius Bergamo | bergamotech.com.br</title>
+<meta name="description" content="Portfólio de Vinícius Trindade Bérgamo: TI, automações, front-end, suporte técnico e projetos com IA em Campo do Meio, MG.">
+<meta name="theme-color" content="#050508">
+<link rel="canonical" href="https://bergamotech.com.br/">
+<meta property="og:title" content="Vinícius Bergamo | BergamoTech">
+<meta property="og:description" content="Tecnologia com propósito: automações, front-end, suporte técnico e projetos próprios.">
+<meta property="og:url" content="https://bergamotech.com.br/">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;600;700&family=Satoshi:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #050508;
+    --surface: #0d0d14;
+    --card: #12121c;
+    --card2: #161622;
+    --border: rgba(255,255,255,0.06);
+    --border2: rgba(255,255,255,0.11);
+    --accent: #4f8cff;
+    --accent-glow: rgba(79,140,255,0.18);
+    --green: #00e0a1;
+    --green-dim: rgba(0,224,161,0.12);
+    --amber: #ffb347;
+    --text: #eeedf5;
+    --muted: #6b6a80;
+    --soft: #9998b0;
+    --font-h: 'Satoshi', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-h);
+    font-size: 15px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 2.5rem;
+    background: rgba(5,5,8,0.88);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+  .logo {
+    font-family: var(--font-mono);
+    font-size: 0.88rem; font-weight: 500;
+    color: var(--text); letter-spacing: 0;
+  }
+  .logo em { color: var(--accent); font-style: normal; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-family: var(--font-mono); font-size: 0.72rem;
+    color: var(--muted); text-decoration: none; letter-spacing: 0;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta {
+    font-family: var(--font-mono); font-size: 0.72rem;
+    background: var(--accent); color: #fff; border: none;
+    padding: 0.55rem 1.3rem; border-radius: 5px; cursor: pointer;
+    letter-spacing: 0; transition: opacity 0.2s;
+  }
+  .nav-cta:hover { opacity: 0.85; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 80svh; display: flex; align-items: center;
+    padding: 2.4rem 2.5rem 2rem; position: relative; overflow: hidden;
+    background:
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(180deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(120deg, rgba(79,140,255,0.08), transparent 34%, rgba(0,224,161,0.05));
+  }
+
+  .hero-inner {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; max-width: 1100px; margin: 0 auto;
+    align-items: center; width: 100%;
+    position: relative; z-index: 1;
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-family: var(--font-mono); font-size: 0.7rem;
+    color: var(--green); letter-spacing: 0; text-transform: uppercase;
+    background: var(--green-dim); border: 1px solid rgba(0,224,161,0.2);
+    padding: 0.3rem 0.9rem; border-radius: 30px; margin-bottom: 1.5rem;
+    display: inline-block;
+  }
+  .badge-dot {
+    display: inline-block; width: 7px; height: 7px;
+    background: var(--green); border-radius: 50%;
+    margin-right: 0.45rem;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
+
+  .hero h1 {
+    font-size: 3.6rem;
+    font-weight: 700; line-height: 1.07;
+    letter-spacing: 0; margin-bottom: 1.25rem;
+  }
+  .hero h1 .name { color: var(--accent); }
+  .hero-desc { color: var(--soft); font-size: 0.95rem; max-width: 480px; margin-bottom: 2rem; line-height: 1.8; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+  .btn-p {
+    font-family: var(--font-mono); font-size: 0.75rem; font-weight: 500;
+    background: var(--accent); color: #fff; border: none;
+    padding: 0.8rem 1.8rem; border-radius: 5px; cursor: pointer;
+    letter-spacing: 0; transition: opacity 0.2s, transform 0.15s;
+  }
+  .btn-p:hover { opacity: 0.87; transform: translateY(-1px); }
+  .btn-s {
+    font-family: var(--font-mono); font-size: 0.75rem;
+    background: transparent; color: var(--muted);
+    border: 1px solid var(--border2); padding: 0.8rem 1.8rem; border-radius: 5px;
+    cursor: pointer; letter-spacing: 0; transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-s:hover { border-color: var(--accent); color: var(--text); }
+
+  /* chips */
+  .chips { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .chip {
+    font-family: var(--font-mono); font-size: 0.65rem;
+    color: var(--muted); border: 1px solid var(--border);
+    padding: 0.25rem 0.65rem; border-radius: 4px; letter-spacing: 0;
+  }
+
+  /* ── HERO PHOTO SIDE ── */
+  .hero-photo-side { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+  .photo-frame {
+    position: relative; width: 224px; height: 224px;
+    border-radius: 22px; border: 1px solid var(--border2);
+    overflow: hidden; flex-shrink: 0; display: grid; place-items: center;
+    background: linear-gradient(145deg, rgba(79,140,255,0.2), rgba(0,224,161,0.12)), var(--card);
+    box-shadow: 0 24px 70px rgba(0,0,0,0.36);
+  }
+  .photo-frame::after {
+    content: ''; position: absolute; inset: 18px; border: 1px solid var(--border2); border-radius: 16px;
+  }
+  .profile-mark { position: relative; z-index: 1; text-align: center; }
+  .profile-mark strong {
+    display: block; font-family: var(--font-mono); font-size: 3.8rem; line-height: 1;
+    color: var(--text); text-shadow: 0 0 24px rgba(79,140,255,0.28);
+  }
+  .profile-mark span {
+    display: block; margin-top: 0.65rem; font-family: var(--font-mono);
+    font-size: 0.72rem; color: var(--green);
+  }
+  .profile-lines {
+    position: absolute; inset: auto 28px 28px 28px; display: grid; gap: 7px;
+  }
+  .profile-lines i {
+    display: block; height: 4px; border-radius: 999px;
+    background: linear-gradient(90deg, var(--accent), var(--green));
+    opacity: 0.65;
+  }
+  .profile-lines i:nth-child(2) { width: 72%; }
+  .profile-lines i:nth-child(3) { width: 48%; }
+
+  .info-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 1rem 1.25rem; width: 100%; max-width: 300px;
+  }
+  .info-row {
+    display: flex; align-items: center; gap: 0.6rem;
+    font-size: 0.8rem; color: var(--soft); padding: 0.35rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .info-row:last-child { border: none; }
+  .info-icon { font-size: 0.9rem; opacity: 0.7; }
+  .info-val { color: var(--text); font-family: var(--font-mono); font-size: 0.72rem; margin-left: auto; }
+  .info-val a { color: var(--accent); text-decoration: none; }
+
+  /* ── SECTIONS ── */
+  .section { padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
+  .sec-label {
+    font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; display: block;
+  }
+  h2 {
+    font-size: 2.2rem; font-weight: 700;
+    letter-spacing: 0; margin-bottom: 0.75rem; line-height: 1.1;
+  }
+  .sec-desc { color: var(--soft); max-width: 520px; margin-bottom: 2.5rem; font-size: 0.9rem; }
+
+  /* ── EXPERIENCE TIMELINE ── */
+  .timeline { position: relative; padding-left: 1.75rem; }
+  .timeline::before {
+    content: ''; position: absolute; left: 0; top: 8px; bottom: 0;
+    width: 1px; background: var(--border2);
+  }
+  .t-item { position: relative; margin-bottom: 2.5rem; }
+  .t-item::before {
+    content: ''; position: absolute; left: -1.82rem; top: 7px;
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent); border: 2px solid var(--bg);
+  }
+  .t-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.35rem; }
+  .t-title { font-weight: 600; font-size: 0.95rem; color: var(--text); }
+  .t-company { color: var(--accent); font-size: 0.85rem; margin-bottom: 0.2rem; }
+  .t-period {
+    font-family: var(--font-mono); font-size: 0.65rem;
+    color: var(--muted); background: var(--card); border: 1px solid var(--border);
+    padding: 0.2rem 0.6rem; border-radius: 4px; white-space: nowrap;
+  }
+  .t-desc { color: var(--soft); font-size: 0.85rem; line-height: 1.7; }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1px; background: var(--border); border: 1px solid var(--border);
+    border-radius: 8px; overflow: hidden;
+  }
+  .skill-card {
+    background: var(--card); padding: 1.6rem; transition: background 0.2s;
+  }
+  .skill-card:hover { background: var(--card2); }
+  .skill-icon {
+    font-size: 1.4rem; margin-bottom: 0.85rem;
+    display: flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; border-radius: 8px;
+  }
+  .skill-card h3 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.4rem; }
+  .skill-card p { font-size: 0.78rem; color: var(--muted); line-height: 1.65; }
+
+  /* ── STACK BARS ── */
+  .stack-section { margin-top: 2.5rem; }
+  .stack-item { margin-bottom: 1.1rem; }
+  .stack-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; }
+  .stack-name { font-family: var(--font-mono); font-size: 0.78rem; color: var(--text); }
+  .stack-lvl {
+    font-family: var(--font-mono); font-size: 0.65rem; padding: 0.15rem 0.55rem;
+    border-radius: 3px;
+  }
+  .lvl-int { background: rgba(79,140,255,0.15); color: var(--accent); }
+  .lvl-acad { background: rgba(0,224,161,0.1); color: var(--green); }
+  .lvl-tool { background: rgba(255,179,71,0.12); color: var(--amber); }
+  .bar-bg { background: var(--border2); border-radius: 3px; height: 4px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 3px; transition: width 0.8s ease; }
+
+  /* ── PROJECTS ── */
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; }
+  .proj-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1.75rem; transition: border-color 0.2s, transform 0.2s; cursor: default;
+  }
+  .proj-card:hover { border-color: rgba(79,140,255,0.34); transform: translateY(-3px); }
+  .proj-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.9rem; }
+  .proj-emoji { font-size: 1.6rem; }
+  .proj-logo {
+    width: 42px; height: 42px; border-radius: 8px; object-fit: cover;
+    border: 1px solid var(--border2); background: var(--surface);
+  }
+  .proj-badge {
+    font-family: var(--font-mono); font-size: 0.62rem; padding: 0.22rem 0.6rem;
+    border-radius: 3px; text-transform: uppercase; letter-spacing: 0;
+  }
+  .b-live { background: rgba(0,224,161,0.12); color: var(--green); }
+  .b-wip  { background: rgba(79,140,255,0.12); color: var(--accent); }
+  .proj-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.45rem; letter-spacing: 0; }
+  .proj-card p  { font-size: 0.8rem; color: var(--muted); line-height: 1.65; margin-bottom: 1.1rem; }
+  .proj-link {
+    display: inline-flex; margin-bottom: 1rem; font-family: var(--font-mono); font-size: 0.68rem;
+    color: var(--accent); text-decoration: none; word-break: break-word;
+  }
+  .proj-link:hover { color: var(--text); }
+  .tech-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .tech-tag {
+    font-family: var(--font-mono); font-size: 0.63rem; color: var(--muted);
+    border: 1px solid var(--border); padding: 0.18rem 0.55rem; border-radius: 3px;
+  }
+
+  .skills-layout {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem;
+  }
+
+  /* ── EDUCATION ── */
+  .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+  .edu-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1.5rem;
+  }
+  .edu-label {
+    font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0;
+    color: var(--muted); text-transform: uppercase; margin-bottom: 0.5rem;
+  }
+  .edu-card h3 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.25rem; }
+  .edu-card span { font-size: 0.78rem; color: var(--soft); }
+
+  /* ── CONQUISTAS ── */
+  .trophy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+  .trophy-card {
+    background: linear-gradient(135deg, rgba(255,179,71,0.05) 0%, var(--card) 100%);
+    border: 1px solid rgba(255,179,71,0.15); border-radius: 8px; padding: 1.5rem;
+    display: flex; gap: 1rem; align-items: flex-start;
+  }
+  .trophy-icon { font-size: 1.8rem; flex-shrink: 0; }
+  .trophy-card h3 { font-size: 0.88rem; font-weight: 600; color: var(--amber); margin-bottom: 0.3rem; }
+  .trophy-card p { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
+
+  /* ── CONTACT ── */
+  .contact-wrap {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 3rem; text-align: center; max-width: 580px; margin: 0 auto;
+  }
+  .contact-wrap h2 { font-size: 1.9rem; margin-bottom: 0.75rem; }
+  .contact-wrap p { color: var(--soft); margin-bottom: 2rem; font-size: 0.88rem; }
+  .contact-links { display: flex; justify-content: center; gap: 0.9rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .c-link {
+    font-family: var(--font-mono); font-size: 0.73rem; color: var(--muted);
+    text-decoration: none; border: 1px solid var(--border);
+    padding: 0.65rem 1.25rem; border-radius: 5px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .c-link:hover { border-color: var(--accent); color: var(--text); }
+  .domain-pill {
+    font-family: var(--font-mono); font-size: 0.72rem; color: var(--green);
+    background: var(--green-dim); border: 1px solid rgba(0,224,161,0.2);
+    padding: 0.35rem 0.9rem; border-radius: 20px; display: inline-block; margin-bottom: 2rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border); padding: 1.5rem 2.5rem;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;
+  }
+  footer p { font-family: var(--font-mono); font-size: 0.68rem; color: var(--muted); }
+  footer span { color: var(--accent); }
+
+  /* ── DIVIDER ── */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+  /* scrollbar */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 4px; }
+
+  @media (max-width: 900px) {
+    nav { padding: 0.9rem 1.25rem; }
+    .nav-links { display: none; }
+    .hero { min-height: auto; padding: 3.5rem 1.25rem 3rem; }
+    .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero h1 { font-size: 3rem; }
+    .hero-photo-side { align-items: flex-start; }
+    .photo-frame { width: min(280px, 100%); aspect-ratio: 1; height: auto; }
+    .section { padding: 4rem 1.25rem; }
+    .skills-layout { grid-template-columns: 1fr; gap: 2rem; }
+    .t-header { flex-direction: column; gap: 0.6rem; }
+    .contact-wrap { padding: 2rem 1.25rem; }
+    footer { padding: 1.5rem 1.25rem; }
+  }
+
+  @media (max-width: 540px) {
+    body { font-size: 14px; }
+    .nav-cta { padding: 0.5rem 0.85rem; }
+    .hero h1 { font-size: 2.35rem; }
+    h2 { font-size: 1.8rem; }
+    .hero-actions { display: grid; grid-template-columns: 1fr; }
+    .btn-p, .btn-s { width: 100%; }
+    .info-card { max-width: 100%; padding: 1rem; }
+    .info-row { align-items: flex-start; flex-wrap: wrap; }
+    .info-val { width: 100%; margin-left: 1.5rem; }
+    .projects-grid, .edu-grid, .trophy-grid { grid-template-columns: 1fr; }
+    .proj-card, .skill-card, .edu-card, .trophy-card { border-radius: 8px; }
+    .contact-links { display: grid; grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">bergamo<em>.</em>tech</div>
+  <ul class="nav-links">
+    <li><a href="#sobre">sobre</a></li>
+    <li><a href="#experiencia">experiência</a></li>
+    <li><a href="#projetos">projetos</a></li>
+    <li><a href="#contato">contato</a></li>
+  </ul>
+  <button type="button" class="nav-cta" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">falar comigo</button>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><span class="badge-dot"></span>aberto a projetos & oportunidades</div>
+      <h1>Olá, eu sou<br><span class="name">Vinícius Bergamo.</span><br>Tecnologia com propósito.</h1>
+      <p class="hero-desc">
+        Atuo em TI e desenvolvimento em Campo do Meio, MG. Combino suporte técnico, automações de CRM, desenvolvimento front-end e inteligência artificial para criar soluções que realmente funcionam.
+      </p>
+      <div class="hero-actions">
+        <button type="button" class="btn-p" onclick="document.getElementById('projetos').scrollIntoView({behavior:'smooth'})">ver projetos →</button>
+        <button type="button" class="btn-s" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">entrar em contato</button>
+      </div>
+      <div class="chips">
+        <span class="chip">React</span>
+        <span class="chip">JavaScript</span>
+        <span class="chip">Python</span>
+        <span class="chip">Automação CRM</span>
+        <span class="chip">Suporte TI</span>
+        <span class="chip">Eng. de Software</span>
+      </div>
+    </div>
+    <div class="hero-photo-side">
+      <div class="photo-frame">
+        <div class="profile-mark" aria-label="BergamoTech">
+          <strong>BT</strong>
+          <span>bergamotech.com.br</span>
+        </div>
+        <div class="profile-lines" aria-hidden="true">
+          <i></i><i></i><i></i>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-row">
+          <span class="info-icon">📍</span>
+          <span>Localização</span>
+          <span class="info-val">Campo do Meio, MG</span>
+        </div>
+        <div class="info-row">
+          <span class="info-icon">🌐</span>
+          <span>Domínio</span>
+          <span class="info-val"><a href="https://bergamotech.com.br/">bergamotech.com.br</a></span>
+        </div>
+        <div class="info-row">
+          <span class="info-icon">💼</span>
+          <span>LinkedIn</span>
+          <span class="info-val"><a href="https://linkedin.com/in/trindadevinicius" target="_blank" rel="noopener noreferrer">trindadevinicius</a></span>
+        </div>
+        <div class="info-row">
+          <span class="info-icon">🐙</span>
+          <span>GitHub</span>
+          <span class="info-val"><a href="https://github.com/tryndadi" target="_blank" rel="noopener noreferrer">tryndadi</a></span>
+        </div>
+        <div class="info-row">
+          <span class="info-icon">✉</span>
+          <span>Email</span>
+          <span class="info-val"><a href="mailto:trindade.vt@outlook.com">trindade.vt@outlook.com</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SOBRE -->
+<section id="sobre" class="section">
+  <span class="sec-label">// sobre mim</span>
+  <h2>Quem é Vinícius?</h2>
+  <p class="sec-desc">Uma trajetória que une raciocínio lógico, tecnologia e gente — desde medalhas olímpicas de matemática até soluções reais para empresas.</p>
+
+  <!-- CONQUISTAS -->
+  <div class="trophy-grid" style="margin-bottom:2.5rem;">
+    <div class="trophy-card">
+      <div class="trophy-icon">🥇</div>
+      <div>
+        <h3>Medalha de Ouro — Olimpíada Nacional</h3>
+        <p>Destaque em competições de matemática desde cedo, conquistando medalha de ouro na Olimpíada Nacional de Matemática.</p>
+      </div>
+    </div>
+    <div class="trophy-card">
+      <div class="trophy-icon">🥈</div>
+      <div>
+        <h3>Representante do Brasil — Índia 2015</h3>
+        <p>Duas medalhas de prata (nacional e internacional) que levaram Vinícius ao Quanta 2015, na Índia, representando o Brasil.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORMAÇÃO -->
+  <span class="sec-label" style="margin-top:0;"># formação</span>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <div class="edu-label">cursando</div>
+      <h3>Engenharia de Software</h3>
+      <span>Graduação em andamento</span>
+    </div>
+    <div class="edu-card">
+      <div class="edu-label">concluído</div>
+      <h3>Desenvolvedor Front-End</h3>
+      <span>Certificação profissional</span>
+    </div>
+    <div class="edu-card">
+      <div class="edu-label">concluído</div>
+      <h3>Técnico de Informática</h3>
+      <span>Curso técnico profissionalizante</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- EXPERIÊNCIA -->
+<section id="experiencia" class="section">
+  <span class="sec-label">// trajetória profissional</span>
+  <h2>Experiência</h2>
+  <p class="sec-desc">6 anos em atendimento ao público com foco em vendas e negociação. 3 anos em suporte técnico especializado. Atualmente em TI e automações.</p>
+
+  <div class="timeline">
+    <div class="t-item">
+      <div class="t-header">
+        <div>
+          <div class="t-title">Analista de TI & Automações</div>
+          <div class="t-company">Voluy Telecom</div>
+        </div>
+        <span class="t-period">atual</span>
+      </div>
+      <p class="t-desc">
+        Integro o time organizacional da empresa, atuando em automações de CRMs, criação de wikis internas, dashboards de acompanhamento de aprendizado e otimização de fluxos e rotinas dos colaboradores. Uso agentes de IA para potencializar soluções técnicas.
+      </p>
+    </div>
+    <div class="t-item">
+      <div class="t-header">
+        <div>
+          <div class="t-title">Suporte Técnico Especializado</div>
+          <div class="t-company">Redes & Configurações Técnicas</div>
+        </div>
+        <span class="t-period">3 anos</span>
+      </div>
+      <p class="t-desc">
+        Diagnóstico e solução de problemas em redes, configuração de equipamentos e suporte técnico especializado. Desenvolvimento de habilidade analítica e orientação a resultados.
+      </p>
+    </div>
+    <div class="t-item">
+      <div class="t-header">
+        <div>
+          <div class="t-title">Atendimento ao Público — Vendas & Negociação</div>
+          <div class="t-company">Diversas empresas</div>
+        </div>
+        <span class="t-period">6 anos</span>
+      </div>
+      <p class="t-desc">
+        Experiência sólida em atendimento ao cliente, vendas consultivas, negociação e prospecção. Base que fortalece a comunicação e entendimento de necessidades do usuário final.
+      </p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SKILLS -->
+<section class="section" style="padding-top:3.5rem; padding-bottom:3.5rem;">
+  <span class="sec-label">// habilidades técnicas</span>
+  <h2>Stack & Tecnologias</h2>
+
+  <div class="skills-layout">
+    <div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon" style="background:rgba(79,140,255,0.12);">⚡</div>
+          <h3>Front-End</h3>
+          <p>React, HTML, CSS e JavaScript com nível intermediário. Desenvolvimento de interfaces funcionais e responsivas.</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon" style="background:rgba(0,224,161,0.1);">🤖</div>
+          <h3>IA & Automação</h3>
+          <p>Agentes de IA integrados a fluxos empresariais. Automação de CRMs e processos internos na Voluy Telecom.</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon" style="background:rgba(255,179,71,0.1);">🔧</div>
+          <h3>Suporte & Redes</h3>
+          <p>3 anos de suporte técnico especializado em redes, configurações e diagnóstico de infraestrutura.</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon" style="background:rgba(79,140,255,0.12);">📊</div>
+          <h3>Dados & Dashboards</h3>
+          <p>Criação de dashboards de acompanhamento de KPIs e aprendizado. Análise e visualização de dados organizacionais.</p>
+        </div>
+      </div>
+    </div>
+    <div class="stack-section" style="margin-top:0;">
+      <p style="font-size:0.78rem;color:var(--muted);margin-bottom:1.5rem;font-family:var(--font-mono);"># nível de domínio</p>
+      <div class="stack-item">
+        <div class="stack-row"><span class="stack-name">React / JavaScript</span><span class="stack-lvl lvl-int">intermediário</span></div>
+        <div class="bar-bg"><div class="bar-fill" style="width:65%;background:var(--accent);"></div></div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-row"><span class="stack-name">HTML / CSS</span><span class="stack-lvl lvl-int">intermediário</span></div>
+        <div class="bar-bg"><div class="bar-fill" style="width:70%;background:var(--accent);"></div></div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-row"><span class="stack-name">Python</span><span class="stack-lvl lvl-acad">acadêmico + IA</span></div>
+        <div class="bar-bg"><div class="bar-fill" style="width:50%;background:var(--green);"></div></div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-row"><span class="stack-name">Java</span><span class="stack-lvl lvl-acad">acadêmico</span></div>
+        <div class="bar-bg"><div class="bar-fill" style="width:40%;background:var(--green);"></div></div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-row"><span class="stack-name">C#</span><span class="stack-lvl lvl-acad">acadêmico + IA</span></div>
+        <div class="bar-bg"><div class="bar-fill" style="width:38%;background:var(--green);"></div></div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-row"><span class="stack-name">Redes & Infraestrutura</span><span class="stack-lvl lvl-tool">especialista</span></div>
+        <div class="bar-bg"><div class="bar-fill" style="width:80%;background:var(--amber);"></div></div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-row"><span class="stack-name">Automação / CRM</span><span class="stack-lvl lvl-tool">produção</span></div>
+        <div class="bar-bg"><div class="bar-fill" style="width:72%;background:var(--amber);"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PROJETOS -->
+<section id="projetos" class="section">
+  <span class="sec-label">// projetos reais</span>
+  <h2>O que estou construindo</h2>
+  <p class="sec-desc">Projetos que nasceram de necessidades reais — da empresa onde trabalho até ideias próprias que estão chegando ao mercado.</p>
+
+  <div class="projects-grid">
+    <div class="proj-card">
+      <div class="proj-top">
+        <span class="proj-emoji">📚</span>
+        <span class="proj-badge b-live">em produção</span>
+      </div>
+      <h3>Wiki Interna — Voluy Telecom</h3>
+      <p>Central de cultura e procedimentos da empresa. Inclui um quiz interativo e dashboard de acompanhamento de aprendizado dos colaboradores, consultado pela diretoria.</p>
+      <div class="tech-tags">
+        <span class="tech-tag">HTML/CSS/JS</span>
+        <span class="tech-tag">Dashboard</span>
+        <span class="tech-tag">Quiz</span>
+        <span class="tech-tag">Automação</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-top">
+        <img class="proj-logo" src="./assets/controle-financeiro-logo.png" alt="Controle Financeiro">
+        <span class="proj-badge b-wip">lançando em breve</span>
+      </div>
+      <h3>App de Controle Financeiro</h3>
+      <p>Aplicativo web/mobile prestes a ser publicado na Google Play Store. O usuário lança despesas e entradas, acompanha histórico e recebe feedback construtivo gerado por IA.</p>
+      <a class="proj-link" href="https://financeiro.bergamotech.com.br/" target="_blank" rel="noopener noreferrer">financeiro.bergamotech.com.br</a>
+      <div class="tech-tags">
+        <span class="tech-tag">React</span>
+        <span class="tech-tag">Mobile</span>
+        <span class="tech-tag">IA Generativa</span>
+        <span class="tech-tag">Google Play</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-top">
+        <span class="proj-emoji">🎉</span>
+        <span class="proj-badge b-wip">em desenvolvimento</span>
+      </div>
+      <h3>RACHA — Centralizador de Eventos</h3>
+      <p>Plataforma onde anunciantes publicam eventos e usuários confirmam presença ou formam grupos para ir juntos. Dentro do grupo, divisão detalhada da conta com racha automático.</p>
+      <a class="proj-link" href="https://racha.bergamotech.com.br/" target="_blank" rel="noopener noreferrer">racha.bergamotech.com.br</a>
+      <div class="tech-tags">
+        <span class="tech-tag">React</span>
+        <span class="tech-tag">Grupos</span>
+        <span class="tech-tag">Eventos</span>
+        <span class="tech-tag">Split de conta</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CONTATO -->
+<section id="contato" class="section" style="padding-bottom:6rem;">
+  <div class="contact-wrap">
+    <span class="sec-label" style="display:block;margin-bottom:0.5rem;"># contato</span>
+    <h2>Vamos conversar?</h2>
+    <p>Aberto a projetos, freelances, colaborações e oportunidades. Respondo por qualquer canal abaixo.</p>
+    <div class="domain-pill">🌐 bergamotech.com.br</div>
+    <div class="contact-links">
+      <a href="mailto:trindade.vt@outlook.com" class="c-link">✉ email</a>
+      <a href="https://linkedin.com/in/trindadevinicius" target="_blank" rel="noopener noreferrer" class="c-link">💼 linkedin</a>
+      <a href="https://github.com/tryndadi" target="_blank" rel="noopener noreferrer" class="c-link">🐙 github</a>
+      <a href="https://wa.me/5535984449065" target="_blank" rel="noopener noreferrer" class="c-link">💬 whatsapp</a>
+    </div>
+    <p style="font-size:0.72rem;font-family:var(--font-mono);color:var(--muted);">(35) 9 8444-9065 · trindade.vt@outlook.com</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 <span>Vinícius Trindade Bérgamo</span> · bergamotech.com.br</p>
+  <p>Campo do Meio, Minas Gerais 🇧🇷</p>
+</footer>
+
+</body>
+</html>
