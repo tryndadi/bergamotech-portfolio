@@ -11,7 +11,7 @@ Portfólio pessoal de Vinícius Trindade Bérgamo para o domínio `bergamotech.c
 ## Deploy sugerido na Vercel
 
 1. Crie um projeto Vercel apontando para este repositório.
-2. Em `Root Directory`, selecione `portfolio`.
+2. Em `Root Directory`, mantenha a raiz do repositório.
 3. Adicione os domínios:
    - `bergamotech.com.br`
    - `www.bergamotech.com.br`

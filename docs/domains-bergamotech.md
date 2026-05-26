@@ -27,7 +27,7 @@ Se o DNS ficar no Registro.br e os projetos ficarem na Vercel, adicione primeiro
 
 ## Ordem de execução
 
-1. Deploy do portfólio como projeto próprio, com `portfolio` como root directory.
+1. Deploy do portfólio como projeto próprio, usando a raiz do repositório como root directory.
 2. Adicionar `bergamotech.com.br` e `www.bergamotech.com.br` no projeto do portfólio.
 3. Adicionar `financeiro.bergamotech.com.br` no projeto do Controle Financeiro.
 4. Adicionar `racha.bergamotech.com.br` no projeto do RACHA quando ele estiver pronto.
