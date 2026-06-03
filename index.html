@@ -264,11 +264,11 @@
   }
   .proj-card:hover { border-color: rgba(79,140,255,0.34); transform: translateY(-3px); }
   .proj-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.9rem; }
-  .proj-emoji { font-size: 1.6rem; }
   .proj-logo {
     width: 42px; height: 42px; border-radius: 8px; object-fit: cover;
     border: 1px solid var(--border2); background: var(--surface);
   }
+  .proj-logo--contain { object-fit: contain; padding: 0.25rem; }
   .proj-badge {
     font-family: var(--font-mono); font-size: 0.62rem; padding: 0.22rem 0.6rem;
     border-radius: 3px; text-transform: uppercase; letter-spacing: 0;
@@ -651,7 +651,7 @@
   <div class="projects-grid">
     <div class="proj-card">
       <div class="proj-top">
-        <span class="proj-emoji">📚</span>
+        <img class="proj-logo" src="./assets/voluy-logo.png" alt="Voluy Telecom">
         <span class="proj-badge b-live">em produção</span>
       </div>
       <h3>Wiki Interna — Voluy Telecom</h3>
@@ -682,7 +682,7 @@
 
     <div class="proj-card">
       <div class="proj-top">
-        <span class="proj-emoji">🎉</span>
+        <img class="proj-logo proj-logo--contain" src="./assets/racha-logo.png" alt="RACHA">
         <span class="proj-badge b-wip">em desenvolvimento</span>
       </div>
       <h3>RACHA — Centralizador de Eventos</h3>
