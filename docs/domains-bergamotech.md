@@ -34,9 +34,23 @@ Se o DNS ficar no Registro.br e os projetos ficarem na Vercel, adicione primeiro
 5. Configurar a zona DNS no Registro.br com os registros apontados pela Vercel.
 6. Aguardar propagação e verificar SSL na Vercel.
 
-## Estado observado em 2026-05-25
+## Estado observado em 2026-06-24
 
-`bergamotech.com.br` já responde com SOA, mas ainda não encontrei registros públicos `A`/`CNAME` para o domínio raiz, `www`, `financeiro` ou `api`. Ou seja: o domínio existe, mas ainda parece não estar apontando para nenhum deploy público.
+- `bergamotech.com.br` responde com registros `A` públicos `104.21.91.64` e `172.67.167.127`.
+- `www.bergamotech.com.br` responde com `CNAME` para `87874a343435e86a.vercel-dns-017.com`.
+- `bergamotech.com.br` tem MX do Zoho (`mx.zoho.com`, `mx2.zoho.com`, `mx3.zoho.com`), compatível com o e-mail público `contato@bergamotech.com.br`.
+
+## Busca e identidade visual
+
+Para ajudar Google, Bing e outros rastreadores a exibirem a marca em vez de um símbolo genérico, o portfólio publica:
+
+- `/favicon.ico` no root do domínio.
+- Ícones PNG em `/assets/favicon-48.png`, `/assets/favicon-192.png`, `/assets/favicon-512.png` e `/assets/apple-touch-icon.png`.
+- `site.webmanifest` com os ícones de app.
+- Metatags Open Graph/Twitter e JSON-LD `Organization` com `logo` e `email` em `index.html`.
+- `robots.txt` apontando para `https://bergamotech.com.br/sitemap.xml`.
+
+Após cada deploy que altere favicon, logo ou metadados, use a inspeção de URL no Google Search Console e no Bing Webmaster Tools para solicitar recrawl. Mesmo com tudo correto, a exibição final é controlada pelo buscador e pode continuar mostrando cache antigo por alguns dias ou semanas.
 
 ## Referências
 
