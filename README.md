@@ -12,6 +12,7 @@ Portfólio pessoal de Vinícius Trindade Bérgamo para o domínio `bergamotech.c
 ## Contato público
 
 - E-mail principal: `contato@bergamotech.com.br`
+- Telefone/WhatsApp: `+55 35 98449-0651`
 
 ## Busca, favicon e prévias sociais
 
